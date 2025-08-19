@@ -1,22 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Gradient Background</title>
+  <title>First Website Twst</title>
   <style>
     body {
-      /* Vertical gradient from light blue to purple */
       background: linear-gradient(to bottom, lightblue, purple);
-      height: 100vh;          /* Make it cover the whole screen */
-      margin: 0;              /* Remove default body margin */
-      display: flex;          /* Optional: center content */
-      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      color: white;           /* Text color */
+      color: white;
       font-family: Arial, sans-serif;
+    }
+
+    #score {
+      font-size: 80px;
+      margin-top: 20px;
+    }
+
+    /* RED GLOSSY STYLE */
+    #click-button {
+      font-size: 60px;
+      padding: 60px 120px;
+      margin-top: auto;
+      margin-bottom: auto;
+
+      background: radial-gradient(circle at top, #ff5e5e, #cc0000);
+      border: 8px solid #7a0000;
+      border-radius: 170px;
+      box-shadow: inset 0 8px 15px rgba(255,255,255,0.5),
+                  inset 0 -8px 15px rgba(0,0,0,0.4),
+                  0 15px 30px rgba(0,0,0,0.4);
+
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      color: white;
+      cursor: pointer;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+    #click-button:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        inset 0 8px 15px rgba(255,255,255,0.5),
+        inset 0 -8px 15px rgba(0,0,0,0.4),
+        0 20px 40px rgba(0,0,0,0.5);
+    }
+    #click-button:active {
+      transform: translateY(4px);
+      box-shadow:
+        inset 0 3px 8px rgba(255,255,255,0.3),
+        inset 0 -3px 8px rgba(0,0,0,0.5),
+        0 5px 10px rgba(0,0,0,0.4);
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to my website!</h1>
+
+<div id="score">0</div>
+<button id="click-button" onclick="addOne()">CLICK</button>
+
+<script>
+  let score = 0;
+  function addOne() {
+    score += 1;
+    document.getElementById("score").textContent = score;
+  }
+</script>
+
 </body>
 </html>
